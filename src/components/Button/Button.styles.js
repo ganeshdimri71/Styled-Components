@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled,{keyframes} from "styled-components";
 
 export const StyledButton = styled.button`
   border: 2px solid #4caf50;
@@ -36,4 +36,19 @@ export const SubmitButton = styled(StyledButton).attrs((props) => {
       props.variant !== "outline" ? "#fff" : "#4caf50"};
     transform: translateY(4px);
   }
+`;
+
+const rotate = keyframes`
+from{
+  transform:rotate(0deg)
+}
+to{
+  transform:rotate(360deg)
+}
+`
+
+export const AnimatedLogo = styled.img`
+height: 40vmin;
+pointer-events:none;
+animation: ${rotate} infinite 2s linear;
 `;
