@@ -1,16 +1,21 @@
 import { useState } from "react";
-import StyledButton,{FancyButton} from "./components/Button/Button";
+import StyledButton, {
+  FancyButton,
+  SubmitButton,
+} from "./components/Button/Button";
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <div className="App">
-      <StyledButton>Styled Button</StyledButton>
+      <StyledButton type="submit">Styled Button</StyledButton>
       <br />
       <StyledButton variant="outline">Styled Button</StyledButton>
       <br />
-      <FancyButton as='a'>Fancy Button</FancyButton>
+      <FancyButton as="a">Fancy Button</FancyButton>
+      <br />
+      <SubmitButton as="a">Attribute Button</SubmitButton>
     </div>
   );
 }
