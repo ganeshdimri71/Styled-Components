@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ThemeProvider } from "styled-components";
+import { ThemeProvider, createGlobalStyle } from "styled-components";
 import StyledButton, {
   FancyButton,
   SubmitButton,
@@ -17,12 +17,20 @@ const theme = {
     primary: "#fff",
     text: "#000",
   },
+  fontFamily: "Segoe UI",
 };
+
+const GlobalStyle = createGlobalStyle`
+button{
+  font-family:${(props) => props.theme.fontFamily}
+}
+`;
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <ThemeProvider theme={theme}>
+      <GlobalStyle />
       <div className="App">
         <AnimatedLogo src={logo} />
         <StyledButton type="submit">Styled Button</StyledButton>
